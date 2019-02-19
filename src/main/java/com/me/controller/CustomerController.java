@@ -42,7 +42,7 @@ public class CustomerController {
 
         String format = simpleDateFormat.format(new Date());
         log.info(format);
-        return format;
+        return format+"---2";
 
     }
 

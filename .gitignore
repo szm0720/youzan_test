@@ -1,6 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 
-.idea
+/.idea
 .idea/workspace.xml
 logs
 .DS_Store
@@ -32,3 +32,5 @@ logs
 *.iml
 
 data
+/.idea/vcs.xml
+/.idea/workspace.xml
