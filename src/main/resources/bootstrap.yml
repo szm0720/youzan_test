@@ -1,6 +1,6 @@
 server:
-  port: 20002
+  port: 20003
 
 spring:
   application:
-    name: youzan_test02
+    name: test

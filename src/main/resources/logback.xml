@@ -3,7 +3,7 @@
     <jmxConfigurator/>
     <!--<include resource="org/springframework/boot/logging/logback/console-appender.xml"/>-->
 
-    <contextName>youzantest</contextName>
+    <contextName>test</contextName>
 
     <!--输出sql语句-->
    <!-- <logger name="com.xxx" level="debug"/>-->

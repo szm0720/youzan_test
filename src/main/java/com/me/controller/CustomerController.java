@@ -38,7 +38,7 @@ public class CustomerController {
     @RequestMapping("/time")
     public String time() {
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
 
         String format = simpleDateFormat.format(new Date());
         log.info(format);

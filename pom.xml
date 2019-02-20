@@ -5,11 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.me</groupId>
-    <artifactId>youzan_test</artifactId>
+    <artifactId>test</artifactId>
     <version>001</version>
 
-    <name>youzan_test</name>
-    <!-- FIXME change it to the project's website -->
+    <name>test</name>
     <url>http://www.example.com</url>
 
     <properties>
@@ -17,8 +16,8 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <fastjson.version>1.2.47</fastjson.version>
+        <docker.image.prefix>lvsedaxiang</docker.image.prefix>
     </properties>
-
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -75,14 +74,15 @@
 
 
     <build>
-        <finalName>youzantest</finalName>
+        <defaultGoal>install</defaultGoal>
+        <finalName>test</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.0.2.RELEASE</version>
                 <configuration>
-                    <mainClass>com.me.YouZanTestApplication</mainClass>
+                    <mainClass>com.me.TestApplication</mainClass>
                 </configuration>
             </plugin>
 
@@ -94,6 +94,19 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.3.6</version>
+                <configuration>
+                    <repository>${docker.image.prefix}/${project.artifactId}</repository>
+                    <buildArgs>
+                        <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 </project>
